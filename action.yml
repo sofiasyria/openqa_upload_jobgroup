@@ -1,0 +1,20 @@
+name: 'Upload'
+description: 'Upload the new job group files to O3'
+inputs:
+  CHANGED_FILES: 
+  TEST_VAR: 
+  APIKEY: 
+  APISECRET:
+outputs:
+  result: 
+    default: 'Failure'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.CHANGED_FILES }}
+    - ${{ inputs.TEST_VAR }}
+    - ${{ inputs.APISECRET }}
+    - ${{ inputs.APIKEY }}
+volumes:
+    - ${{ github.workspace }}/Jobgroups:/Jobgroups
