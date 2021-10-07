@@ -1,13 +1,12 @@
 name: 'Upload'
 description: 'Upload the new job group files to O3'
 inputs:
-  CHANGED_FILES: 
-  TEST_VAR: 
-  APIKEY: 
-  APISECRET:
+  CHANGED_FILES 
+  TEST_VAR 
+  APIKEY 
+  APISECRET
 outputs:
-  result: 
-    default: 'Failure'
+  result 
 runs:
   using: 'docker'
   image: 'Dockerfile'
